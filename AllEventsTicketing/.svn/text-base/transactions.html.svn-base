@@ -1,0 +1,73 @@
+<table width="100%">
+<tr><td>
+
+<div><h1>Account Transactions</h1></div>
+<div><h3>Use this screen to view transactions for a specific period of time.  You can select a different account or period of time</h3></div>
+
+<div id="topContainer" style="display:block;">
+<!-- top left -->
+<div style="display:block; width:455px; float:left;">
+	<div id="h2" style="margin-top: 30px; margin-bottom:30px;">Viewing Checking</div>
+	<div style="font-size:9px; color:#CCCCCC; display:block;">
+		<div style="display:block;">Prior Day Balance</div>
+		<div style="display:block;">Current Balance</div>
+		<div style="display:block;">Available Balance</div>
+	</div>
+</div>
+<!-- end left -->
+<!-- top right -->
+<form action="<?=$PHP_SELF?>" method="POST" enctype="multipart/form-data">
+<div style="float:right; margin-top:20px; display:block;">
+	<div style="background-color:#abc1cf;">View Account:</div>
+	<div><select name="account" id="account" width="200">
+                        <option selected="selected">&nbsp;</option>
+												<option>Checking</option>
+                        <option>Savings</option>
+                        <option>Credit</option>
+                    </select>
+
+	</div>
+	<div style="background-color:#abc1cf;">View Transactions:</div>
+	<div><input type="radio" name="changeDate" id="changeDate" /> From: <input type="text" name="fromDate" id="fromDate" /> To: <input type="text" name="toDate" id="toDate" /></div>
+	<div style="text-align:right; margin-top:5px;"><input type="submit" name="submit" value="Change View" /></div>
+</div></form>
+<!-- end top right -->
+</div>
+
+
+
+<!-- view area -->
+<div style="background-color: #19699a; padding:3px; text-align:left; color:#ffffff; display:block; margin-top:150px; font-weight:bold;">Transactions</div>
+<div>
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr bgcolor="#d9e3e2" style="color:#064b7a;">
+			<td>Date</td>
+			<td>Transaction</td>
+			<td>Description</td>
+			<td>Debit</td>
+			<td>Credit</td>
+			<td>Balance</td>
+		</tr>
+		<tr>
+			<td>10/10/2007</td>
+			<td>Debit</td>
+			<td>Broulims Grocery</td>
+			<td>$23.18</td>
+			<td>&nbsp;</td>
+			<td>$325.44</td>
+		</tr>
+		<tr>
+			<td>10/08/2007</td>
+			<td>Debit</td>
+			<td>Smith and Edwards</td>
+			<td>$104.18</td>
+			<td>&nbsp;</td>
+			<td>$429.62</td>
+		</tr>
+		<tr bgcolor="#d9e3e2" style="color:#064b7a;">
+			<td colspan="6">&nbsp;</td>
+		</tr>
+	</table>		
+</div>
+
+</td></tr></table>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+<script type="text/javascript" language="javascript">
+var req;
+
+function loadPage(url) {
+	req = false;
+    // branch for native XMLHttpRequest object
+    if(window.XMLHttpRequest && !(window.ActiveXObject)) {
+    	try {
+			req = new XMLHttpRequest();
+        } catch(e) {
+			req = false;
+        }
+    // branch for IE/Windows ActiveX version
+    } else if(window.ActiveXObject) {
+       	try {
+        	req = new ActiveXObject("Msxml2.XMLHTTP");
+      	} catch(e) {
+        	try {
+          		req = new ActiveXObject("Microsoft.XMLHTTP");
+        	} catch(e) {
+          		req = false;
+        	}
+		}
+    }
+	if(req) {
+		req.onreadystatechange = processReqChange;
+		req.open("GET", url, true);
+		req.send("");
+	}
+}
+
+function processReqChange() {
+    // only if req shows "loaded"
+    if (req.readyState == 4) {
+        // only if "OK"
+        //alert(req.status)
+        if (req.status == 200) {
+            //alert(req.responseText)
+            document.getElementById('content').innerHTML = req.responseText;
+        } else {
+            alert("The page you are requesting is currently unavailable:\n Please contact customer support for account information" +
+                req.statusText);
+        }
+    }
+}
+
+</script>
+</head>
+<body onload="loadPage('default.html')">
+<!-- open main container div -->
+<div id="mainContainer">
+<div id="innerContainer">
+	<!-- this is the very top section with logo, links and search -->
+	<div id="top">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td valign="top"><div class="logo"><a href="index.html"><img src="images/logo2.jpg" border="0" /></a></div></td>
+				<td valign="top">
+				
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" align="right">
+						<tr>
+							<td width="100%" align="right" valign="top">
+								<div id="vtopNav">
+									<a href="">Faq</a> - <a href="">Locate a Branch</a> - <a href="">Contact Us</a> - <a href="">Help</a>
+								</div>	
+							</td>
+							<td width="220px" align="right" valign="top">
+								<div id="search">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%">
+										<tr><form>
+											<td><input name="" type="text" id=""></td>
+											<td>&nbsp;<input type="submit" name="" value="search" /></td>
+											</form>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+					</table>		
+				
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!-- close top section -->
+	<!-- start navigation -->
+	<div id="topNav2">
+		<div style="width:10px; float:left">&nbsp;</div>
+		<div class="topNavItem2"><a onclick="loadPage('transactions.html')">Accounts</a></div>
+		<div class="topNavItem2"><a onclick="loadPage('transfers.html')">Transfers</a></div>
+		<div class="topNavItem2"><a onclick="loadPage('billPay.html')">Bill Pay</a></div>
+		<div class="topNavItem2"><a onclick="loadPage('securities.html')">Securities</a></div>
+		<div class="topNavItem2"><a onclick="loadPage('personal.html')">Personal Info</a></div>
+		<div class="topNavItem2" style="float:right"><a onclick="loadPage('default.html')">logout</a></div>
+	</div>
+	<!-- end navigation -->
+	
+	
+	<!-- start middle section -->
+	<div id="content">
+		
+	</div>
+	<!-- end middle section -->
+	
+	
+	<!-- start bottom section -->
+	<div id="bottom">
+		<div id ="copyright" style="float:left;></div>
+		<div id="copyright">Copyright 2007, Home Town Bank</div>
+		<div id="privacy" style="float:right;></div>
+		<div id="privacy"><a href="index.html">Privacy Policy</a> - <a href="index.html">Terms of Use</a> - <a href="index.html">Contact Us</a> - <a href="index.html">Locations</a></div>
+	</div>
+	<!-- end bottom section -->
+
+
+</div>
+</div>
+<!-- close main container div -->
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<h1>Buy/Sell Securities</h1>
+	<p>Home Town Bank offers the most profitable securities available on todays market.  You can trust the Home Town name to be your securities broker.</p>
+
+<h2>My Securities</h2>
+	
+<table border="1" width="90%">
+<tr><td>
+<table border="0" width="100%">
+		<tr style="background-color:#1d699a; color:#ffffff;">
+		
+			<td><strong>Maturity Rate</strong></td>
+			<td><strong>Interest Rate</strong></td>
+			<td><strong>Principle</strong></td>
+			<td><strong>Date Purchased</strong></td>
+			<td><strong>Current Value</strong></td>
+			<td style="text-align:center;"><strong>Sell</strong></td>
+		<tr style="background-color:#F2F2F0;">
+			<td>6 Month CD</td>
+			<td>2.5%</td>
+			<td>$200</td>
+			<td>December 6, 2006</td>
+			<td>$213</td>
+			<td style="text-align:center;"><a href="#">Sell</a></td>
+
+		</tr>
+		<tr>
+			<td>1 Year CD</td>
+			<td>2.9%</td>
+			<td>$500</td>
+			<td>June 7, 2007</td>
+			<td>$514</td>
+			<td style="text-align:center;"><a href="#">Sell</a></td>
+		</tr>		
+	</table></td></tr>
+	</table>
+	<br />
+<h2>Buy Securities</h2>
+	<table border="1" width="90%">
+		<tr>
+			<td>
+	
+	<table border="0" width="100%">
+		<tr style="background-color:#1d699a; color:#ffffff;">
+		 	<td><strong>Maturity Rate</strong></th>
+			<td><strong>Interest Rate</strong></th>
+			<td><strong>Principle</strong></th>
+			<td style="text-align:center;"><strong>Purchase</strong></th>
+		</tr>
+		<tr style="background-color:#F2F2F0;">
+			<td>6 Month CD</td>
+			<td>2.5%</td>
+			<td>$200</td>
+			<td style="text-align:center;"><a href="#2">Buy</a></td>
+
+		</tr>
+		<tr>
+			<td>1 Year CD</td>
+			<td>2.9%</td>
+			<td>$500</td>
+			<td style="text-align:center;"><a href="#2">Buy</a></td>
+		</tr>
+		<tr style="background-color:#F2F2F0;">
+			<td>5 Year CD</td>
+			<td>3.5%</td>
+			<td>$1000</td>
+			<td style="text-align:center;"><a href="#2">Buy</a></td>
+		</tr>
+		<tr>
+			<td>10 Year CD</td>
+			<td>4.5%</td>
+			<td>$5000</td>
+			<td style="text-align:center;"><a href="#2">Buy</a></td>
+		</tr>
+
+		
+	</table>
+		</td>
+		</tr>
+		</table><br />

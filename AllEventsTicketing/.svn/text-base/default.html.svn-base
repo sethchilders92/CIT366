@@ -1,0 +1,20 @@
+<table width="100%">
+<tr><td>
+
+<div><h1>You Have Successfully Logged In</h1></div>
+<div><h3>Please use the navigation above to view your services</h3></div>
+
+<div id="topContainer" style="display:block;">
+<!-- top left -->
+<div style="display:block; width:455px; float:left;">
+	<div id="h2" style="margin-top: 30px; margin-bottom:30px;"></div>
+	<div style="font-size:9px; color:#CCCCCC; display:block;">
+		<div style="display:block;">Prior Day Balance</div>
+		<div style="display:block;">Current Balance</div>
+		<div style="display:block;">Available Balance</div>
+	</div>
+</div>
+<!-- end left -->
+
+
+</td></tr></table>

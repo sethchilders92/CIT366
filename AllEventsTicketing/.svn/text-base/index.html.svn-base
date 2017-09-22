@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+
+
+<!-- open main container div -->
+<div id="mainContainer">
+<div id="innerContainer">
+
+		<div id="login" style="height:166px; width:235px; position:absolute; z-index:1; background:solid 1px #666666; margin-top:82px; margin-left:-20px;">
+			<div id="loginTop" style="height:27px; background-color:#abc1cf; border:solid 1px #666666; color:#19699a; text-align:center; font-size:18px;">Secure Member Login <img src="images/lock.jpg" border="0" /></div>
+			<div id="loginContent" style="padding:5px; background-color:#f0f6f9; border:solid 1px #666666;">
+				<form method="post" action="position.html">
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td><b>Username:</b></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type="text" id="username" name="username" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><b>Password:</b></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type="password" id="password" name="password" /></td>
+						<td><input type="submit" id="login" name="login" value="login" /></td>
+					</tr>
+					<tr><td>&nbsp;</td></tr>
+					<tr>
+						<td colspan="2"><span class="green">> </span><a href="">forgot username or password?</a></td>
+					</tr>
+					<tr>
+						<td colspan="2"><span class="green">> </span><a href="">create an account</a></td>
+					</tr>		
+				</table>	
+				</form>		
+			</div>
+		</div>
+
+
+
+	<!-- this is the very top section with logo, links and search -->
+	<div id="top">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td valign="top"><div class="logo"><a href="index.html"><img src="images/logo.jpg" border="0" /></a></div></td>
+				<td valign="top">
+				
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" align="right">
+						<tr>
+							<td width="100%" align="right" valign="top">
+								<div id="vtopNav">
+									<a href="">Faq</a> - <a href="">Locate a Branch</a> - <a href="">Contact Us</a> - <a href="">Help</a>
+								</div>	
+							</td>
+							<td width="220px" align="right" valign="top">
+								<div id="search">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%">
+										<tr><form>
+											<td><input name="" type="text" id=""></td>
+											<td>&nbsp;<input type="submit" name="" value="search" /></td>
+											</form>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+					</table>		
+				
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!-- close top section -->
+	<!-- start navigation -->
+	<div id="topNav">
+		<div style="width:220px; float:left">&nbsp;</div>
+		<div class="topNavItem">Home</div><div class="navLine"></div>
+		<div class="topNavItem"><nobr>Create Account</nobr></div><div class="navLine"></div>
+		<div class="topNavItem">Services</div><div class="navLine"></div>
+	</div>
+	<!-- end navigation -->
+	<!-- start middle section -->
+	<div id="middle">
+		<div id="welcome">Welcome to Home Town Bank</div>
+		<div id="learn">
+			<div class="h1">Learn More About:</div>
+			<div id="learnNav">
+				<div id="left" style="float:left; margin-left:10px;">
+					<div><span class="green">> </span><a href="">Online Banking</a></div>
+					<div><span class="green">> </span><a href="">Bill Pay</a></div>
+					<div><span class="green">> </span><a href="">Transfers</a></div>
+					<div><span class="green">> </span><a href="">Checking</a></div>
+					<div><span class="green">> </span><a href="">Savings</a></div>
+				</div>
+				<div id="right" style="float:left; margin-left:20px;">
+					<div><span class="green">> </span><a href="">Credit Cards</a></div>
+					<div><span class="green">> </span><a href="">Loans</a></div>
+					<div><span class="green">> </span><a href="">Investing</a></div>
+					<div><span class="green">> </span><a href="">Insurance</a></div>
+					<div><span class="green">> </span><a href="">More...</a></div>
+				</div>			
+			</div>
+		</div>
+		<div id="member">
+			<div class="h2">Member Spotlight</div>
+			<div><span class="green">> </span><a href="">learn more</a></div>
+		</div>
+		<div style="display:block; margin-top:140px; margin-left:40px;">
+			<img src="images/ads.jpg" border="0" />
+		</div>
+	</div>
+	<!-- end middle section -->
+	<!-- start bottom section -->
+	<div id="bottom">
+		<div id ="copyright" style="float:left;></div>
+		<div id="copyright">Copyright 2007, Home Town Bank</div>
+		<div id="privacy" style="float:right;></div>
+		<div id="privacy"><a href="index.html">Privacy Policy</a> - <a href="index.html">Terms of Use</a> - <a href="index.html">Contact Us</a> - <a href="index.html">Locations</a></div>
+	</div>
+	<!-- end bottom section -->
+
+</div>
+</div>
+<!-- close main container div -->
+
+</body>
+</html>

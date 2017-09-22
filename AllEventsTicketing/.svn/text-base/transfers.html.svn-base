@@ -1,0 +1,32 @@
+
+<h1 align="center">Transfer Funds</h1>
+	<p align="center">Home Town Bank offers safe, secure transferring of funds.  Transfers have no limit from one account to another.</p>
+	<br/>
+<h2 align="center">Transfers From</h2>
+	<div align="center">
+	 
+	   <strong>Account Name: </strong><br />
+	   <select>
+		      <option>Checking</option>
+		      <option>Savings</option>
+  </select><br /><br />
+
+		  <strong>Transfer Amount:</strong>
+			<INPUT TYPE=text NAME=amountinput SIZE=12 MAXLENGTH=12></LABEL></P><br />
+		  <INPUT type="submit" name="submit" value="Submit">
+	    
+  </div>
+  <h2 align="center">Transfers To</h2>
+
+	<div align="center">
+	
+	    <strong>Account Name: </strong><br />
+		    <select>
+		      <option>Savings</option>
+		      <option>Checking</option>
+  </select><br />
+		  
+	   
+	
+  </div>
+
