@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7407710a-85ed-4f46-88c2-5c441f7cc45c" name="Default" comment="" />
+    <list default="true" id="7407710a-85ed-4f46-88c2-5c441f7cc45c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllEventsTicketing/Set.js" afterPath="$PROJECT_DIR$/AllEventsTicketing/Set.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="Set.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AllEventsTicketing/Set.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="-596">
+              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -134,12 +136,12 @@
       <updated>1505408937824</updated>
       <workItem from="1505408943136" duration="283000" />
       <workItem from="1505502086712" duration="1862000" />
-      <workItem from="1506010665704" duration="10717000" />
+      <workItem from="1506010665704" duration="10989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12862000" />
+    <option name="totallyTimeSpent" value="13134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="754" y="0" width="1174" height="990" extended-state="0" />
@@ -205,8 +207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AllEventsTicketing/Set.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="-596">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
