@@ -18,6 +18,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
 import {MessagesComponent} from './messages/message.component';
 import {Message} from './messages/message.model';
 import {HttpModule} from "@angular/http";
+import {DropdownDirective} from "./dropdown.directive";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {HttpModule} from "@angular/http";
     MessagesComponent,
     MessageItemComponent,
     MessageEditComponent,
-    MessageListComponent
+    MessageListComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
