@@ -1,11 +1,10 @@
 <div style="display: flex; flex-flow: row nowrap; margin: auto;" class="row">
   <div class="col-md-5">
-    <cms-contact-list
-      (selectedContactEvent)="selectedContact = $event"></cms-contact-list>
+    <cms-contact-list></cms-contact-list>
   </div>
   <div class="col-md-4">
     <cms-contact-detail
-      *ngIf="selectedContact !== undefined && selectedContact !== null;"
+      *ngIf="selectedContact"
       [contact]="selectedContact"></cms-contact-detail>
   </div>
 
