@@ -18,11 +18,11 @@ export class MessagesService {
   }
 
   getMessage(id: string): Message {
-    this.messages.forEach(message => {
+    for (let message of this.messages) {
       if (id === message.id) {
         return message;
       }
-    });
+    }
     return null;
   }
 
@@ -30,11 +30,4 @@ export class MessagesService {
     this.messages.push(message);
     this.messageChangeEvent.emit(this.messages.slice());
   }
-
-  // addMessages(messages: Message[]) {
-  //   for (let message of messages) {
-  //     this.messages.push(...messages);
-  //     this.messageChangeEvent.emit(this.messages.slice());
-  //   }
-  // }
 }
