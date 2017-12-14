@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-body">
 
-    <form id="document-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form id="document-edit" (ngSubmit)="onSubmit(formy, name, description, url)" #formy="ngForm">
       <div class="row">
 
         <div class="col-sm-12 form-group">
@@ -49,7 +49,7 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit" *ngIf="f.valid">Save</button>
+          <button class="btn btn-success" type="submit" *ngIf="formy.valid">Save</button>
           <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
         </div>
       </div>

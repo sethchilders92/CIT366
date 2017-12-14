@@ -12,9 +12,11 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class ContactDetailComponent implements OnInit {
   contact: Contact;
   id: string;
+
   constructor(private contactService: ContactService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.activatedRoute.params
@@ -24,6 +26,8 @@ export class ContactDetailComponent implements OnInit {
           this.contact = this.contactService.getContact(this.id);
         }
       );
+    this.contactService.contactSelectedEvent.subscribe(
+      (contact: Contact) => { this.contact = contact; });
   }
 
   onEditContact() {
@@ -34,5 +38,4 @@ export class ContactDetailComponent implements OnInit {
     this.contactService.deleteContact(this.contact);
     this.router.navigate(['../'], {relativeTo: this.activatedRoute});
   }
-
 }

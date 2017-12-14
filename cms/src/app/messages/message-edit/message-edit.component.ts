@@ -11,11 +11,9 @@ export class MessageEditComponent implements OnInit {
   @ViewChild('subjectInput') subjectInputRef: ElementRef;
   @ViewChild('messageInput') messageInputRef: ElementRef;
   @Output() addMessageEvent = new EventEmitter<Message>();
-
+  currentSender: string = '7';
+    // this.subjectInputRef.nativeElement.value;
   messages: Message[];
-
-  currentSender = '7';
-
   constructor(private messageEditService: MessagesService) { }
 
   ngOnInit() {
@@ -24,8 +22,8 @@ export class MessageEditComponent implements OnInit {
   onSendMessage() {
     const mySubject  = this.subjectInputRef.nativeElement.value;
     const myMessage  = this.messageInputRef.nativeElement.value;
-    const newMessage = new Message('4', mySubject, myMessage, this.currentSender);
-    this.addMessageEvent.emit(newMessage);
+    const newMessage = new Message('4', mySubject, myMessage, mySubject);
+    this.messageEditService.addMessage(newMessage);
   }
 
   onClear() {

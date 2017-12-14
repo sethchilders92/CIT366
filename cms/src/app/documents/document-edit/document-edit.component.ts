@@ -15,8 +15,8 @@ export class DocumentEditComponent implements OnInit {
   @ViewChild('f') documentEditForm: NgForm;
   document: Document;
   originalDocument: Document;
-  editMode: boolean = false;
-  id: string;
+  editMode = false;
+  id: number;
   subscription: Subscription;
   editedDocument: Document;
 
@@ -25,7 +25,7 @@ export class DocumentEditComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.subscription = this.documentService.documentListChangedEvent
+    this.subscription = this.route.params
       .subscribe(
         (param: Params) => {
           this.id = param['id'];
@@ -33,7 +33,7 @@ export class DocumentEditComponent implements OnInit {
             this.editMode = false;
             return;
           }
-          this.originalDocument = this.documentService.getDocument(this.id);
+          this.originalDocument = this.documentService.getDocument(this.id.toString());
           if (isNullOrUndefined(this.originalDocument)) {
             return;
           }
@@ -45,13 +45,23 @@ export class DocumentEditComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const values = form.value;
+    console.log(form);
+    let tempDoc: Document;
+    this.id = this.documentService.getMaxId();
+    console.log(`After getMaxId the id is ${this.id}`);
+    tempDoc = this.documentService.getDocument(this.id.toString());
+    console.log("tempDoc: " + tempDoc.name + ' ' + tempDoc.id);
     const newDocument = new Document(values.id, values.name, values.description, values.url, values.children);
     if (this.editMode) {
-      this.documentService.updateDocument(this.originalDocument, newDocument);
+      this.documentService.updateDocument(tempDoc, newDocument);
     } else {
+      // console.log("Original Doc: " + this.originalDocument);
+      this.documentService.deleteDocument(tempDoc);
+      // console.log("New Doc: " + newDocument.id);
       this.documentService.addDocument(newDocument);
     }
     this.editMode = false;
+
     form.reset();
   }
 

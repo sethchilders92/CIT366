@@ -49,7 +49,8 @@
             pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*">
         </div>
 
-        <div class="alert alert-danger" *ngIf="(!phone.valid && phone.dirty)">
+        <div class="alert alert-danger"
+             *ngIf="(!phone.valid && phone.dirty)">
           Enter a valid phone number.
         </div>
 
@@ -70,7 +71,8 @@
         <label for="groupList">Group contacts</label>
 
         <div class="row" id="groupList"
-             style="min-height: 3rem;" >
+             style="min-height: 3rem;"
+             dnd-droppable [dropZones]="['contactGroup']" (onDropSuccess)="addToGroup($event)">
 
           <div *ngFor="let contact of groupContacts; let i = index">
             <div>

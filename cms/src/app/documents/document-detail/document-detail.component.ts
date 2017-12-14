@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Params, Router, Route } from '@angular/router';
 
 import {Document} from '../document.model';
 import {DocumentsService} from '../documents.service';
@@ -11,8 +11,9 @@ import {WindRefService} from '../../wind-ref.service';
   styleUrls: ['./document-detail.component.css']
 })
 export class DocumentDetailComponent implements OnInit {
+  @Input() document: Document;
   nativeWindow: any;
-  document: Document;
+  // document: Document;
   id: string;
 
   constructor(private documentService: DocumentsService,
@@ -34,12 +35,18 @@ export class DocumentDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = params['id'];
-          this.document = this.documentService.getDocument(this.id);
+          this.document = this.documentService.getDocumentIndex(this.id);
         }
       );
+    this.documentService.documentSelectedEvent.subscribe(
+      (document: Document) => {
+        this.document = document;
+      });
   }
 
   onEditDocument() {
+    // const newDocument = new Document(values.id, values.name, values.description, values.url, values.children);
+    // this.documentService.updateDocument(this.document);
     this.router.navigate(['edit'], {relativeTo: this.activatedRoute});
   }
 

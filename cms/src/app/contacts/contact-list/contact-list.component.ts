@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Contact } from '../contacts.model';
 import { ContactService } from '../contact.service';
-import {Subscription} from "rxjs/Subscription";
+import { Router, ActivatedRoute } from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'cms-contact-list',
@@ -11,8 +12,12 @@ import {Subscription} from "rxjs/Subscription";
 export class ContactListComponent implements OnInit {
   private subscription: Subscription;
   contacts: Contact[] = [];
+  searchBox: string;
+  term: string;
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService,
+              private router: Router,
+              private route: ActivatedRoute) {
     this.contacts = this.contactService.getContacts();
   }
 
@@ -20,8 +25,8 @@ export class ContactListComponent implements OnInit {
     // maybe delete this subscription
     this.contactService.contactChangedEvent
       .subscribe(
-        (contact: Contact[]) => {
-          this.contacts = contact;
+        (contacts: Contact[]) => {
+          this.contacts = contacts;
         }
       );
 
@@ -33,7 +38,11 @@ export class ContactListComponent implements OnInit {
       );
   }
 
-  onSelected(contact: Contact) {
-    this.contactService.contactSelectedEvent.emit(contact);
+  onKeyPress(value: string) {
+    this.term = value;
   }
+
+  // onSelected(contact: Contact) {
+  //   this.contactService.contactSelectedEvent.emit(contact);
+  // }
 }

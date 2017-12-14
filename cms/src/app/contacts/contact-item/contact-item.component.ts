@@ -9,7 +9,7 @@ import {Contact} from '../contacts.model';
 export class ContactItemComponent implements OnInit {
   @Input() contact: Contact;
   @Output() contactSelected = new EventEmitter<void>();
-
+  @Input() index: number;
   constructor() { }
 
   ngOnInit() {
