@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var sequenceGenerator = require('../models/sequence');
 
 var Contact = require('../models/contact');
 

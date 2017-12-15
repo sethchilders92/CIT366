@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
   res.render("index");
 });
 // Tell express to map all other non-defined routes back to the index page
-app.get('*', (req, res) => {
+app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 

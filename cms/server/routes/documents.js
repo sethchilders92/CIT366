@@ -1,13 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var sequenceGenerator = require('../models/sequence');
 
 var Document = require('../models/document');
 
 router.get('/', function (req, res, next) {
+  console.log('router.get');
   getDocuments(res);
 });
 
 var getDocuments = function(res) {
+  console.log('getDocuments');
+
   Document.find()
     .exec(function (err, documents) {
       if (err) {
@@ -23,7 +27,9 @@ var getDocuments = function(res) {
     });
 }
 
-router.post('/', function saveDocument(req, res, next) {
+router.post('/', function (req, res, next) {
+  console.log('router.post');
+
   var maxDocumentId = sequenceGenerator.nextId("documents");
 
   var document = new Document({
@@ -36,6 +42,8 @@ router.post('/', function saveDocument(req, res, next) {
 });
 
 var saveDocument = function(res, document) {
+  console.log('saveDocument');
+
   document.save(function(err, result) {
     if (err) {
       return res.status(500).json({
@@ -53,6 +61,8 @@ var saveDocument = function(res, document) {
 
 
 router.patch('/:id', function (req, res, next) {
+  console.log('router.patch');
+
   Document.findOne({id: req.params.id}, function (err, document) {
     if (err) {
       return res.status(500).json({
@@ -91,6 +101,8 @@ router.patch('/:id', function (req, res, next) {
 // });
 
 router.delete('/:id', function deleteDocument(req, res, next) {
+  console.log('router.delete');
+
   var query = {id: req.params.id};
 
   Document.findOne(query, function (err, document) {

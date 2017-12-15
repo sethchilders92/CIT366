@@ -25,7 +25,7 @@ export class MessagesService {
   }
 
   getMessages() {
-    console.log(this.messages.slice());
+    // console.log(this.messages.slice());
     return this.messages.slice();
   }
 
@@ -69,7 +69,7 @@ export class MessagesService {
         this.messageListChangedEvent.next(messagesListClone);
       }
     );
-    console.log(this.messages);
+    // console.log(this.messages);
 
   }
 
