@@ -5,6 +5,8 @@ import {Subject} from 'rxjs/Subject';
 import {isNullOrUndefined} from 'util';
 import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
+import { Headers } from '@angular/http';
+// import { HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class DocumentsService {
@@ -26,7 +28,7 @@ export class DocumentsService {
     return this.documents.slice();
   }
 
-  getDocumentIndex(id: strin) {
+  getDocumentIndex(id: string) {
     return this.documents[id];
   }
 
@@ -44,12 +46,31 @@ export class DocumentsService {
       return;
     }
 
-    this.maxDocumentId++;
-    newDocument.id = this.maxDocumentId.toString();
-    this.documents.push(newDocument);
-    this.storeDocuments();
-    // this.documentListChangedEvent.next(this.documents.slice());
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    newDocument.id = '';
+    const strDocument = JSON.stringify(newDocument);
+
+    this.http.post('http://localhost:3000/documents', strDocument, {headers: headers})
+      .map(
+        (response: Response) => {
+          return response.json().obj;
+        })
+      .subscribe(
+        (documents: Document[]) => {
+          this.documents = documents;
+          // maybe documentChangedEvent
+          this.documentListChangedEvent.next(this.documents.slice());
+        });
   }
+  //   this.maxDocumentId++;
+  //   newDocument.id = this.maxDocumentId.toString();
+  //   this.documents.push(newDocument);
+  //   this.storeDocuments();
+  //   // this.documentListChangedEvent.next(this.documents.slice());
+  // }
 
   updateDocument(originalDocument: Document, newDocument: Document) {
     if (isNullOrUndefined(originalDocument) || isNullOrUndefined(newDocument)) {
@@ -61,27 +82,42 @@ export class DocumentsService {
       return;
     }
 
-    console.log(`newDoc.id = ${newDocument.id} originalDoc.id = ${originalDocument.id}`);
-    newDocument.id = originalDocument.id;
-    console.log(`New: newDoc.id = ${newDocument.id} originalDoc.id = ${originalDocument.id}`);
-    this.documents[pos] = newDocument;
-    this.storeDocuments();
-    // this.documentListChangedEvent.next(this.documents.slice());
+    const strDocument = JSON.stringify(newDocument);
+
+    // this.http.patch('http://localhost:3000/documents/' + originalDocument.id
+    //   , strDocument, {headers: headers})
+    //   .map(
+    //     (response: Response) => {
+    //       return response.json().obj;
+    //     })
+    //   .subscribe(
+    //     (documents: Document[]) => {
+    //       this.documents = documents;
+    //       // maybe documentChangedEvent
+    //       this.documentListChangedEvent.next(this.documents.slice());
+    //     });
   }
+
+  //   newDocument.id = originalDocument.id;
+  //   this.documents[pos] = newDocument;
+  //   this.storeDocuments();
+  //   // this.documentListChangedEvent.next(this.documents.slice());
+  // }
 
   deleteDocument(document: Document) {
     if (isNullOrUndefined(document)) {
       return;
     }
-    const pos = this.documents.indexOf(document);
-    if (pos < 0) {
-      return;
-    }
-    this.documents.splice(pos, 1);
-    // console.log(this.documents);
-    this.storeDocuments();
-    // const documentsListClone = this.documents.slice();
-    // this.documentListChangedEvent.next(documentsListClone);
+    this.http.delete('http://localhost:3000/documents/' + document.id)
+      .map(
+        (response: Response) => {
+          return response.json().obj;
+        })
+      .subscribe(
+        (documents: Document[]) => {
+          this.documents = documents;
+          this.documentListChangedEvent.next(this.documents.slice());
+        });
   }
 
   getMaxId(): number {
@@ -96,7 +132,7 @@ export class DocumentsService {
   }
 
   initDocuments() {
-      this.http.get('https://sethchilders92cms.firebaseio.com/documents.json')
+      this.http.get('http://localhost:3000/documents')
         .map(
           (response: Response) => {
             this.documents = response.json();
@@ -114,7 +150,7 @@ export class DocumentsService {
 
   storeDocuments() {
     const sendDocs = JSON.stringify(this.documents);
-    this.http.put('https://sethchilders92cms.firebaseio.com/documents.json', sendDocs).subscribe(
+    this.http.put('https://localhost:3000/documents', sendDocs).subscribe(
       (response: Response) => {
         this.documents = response.json();
         this.maxDocumentId = this.getMaxId();
